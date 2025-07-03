@@ -1,29 +1,7 @@
-import { Composition, AbsoluteFill, staticFile } from 'remotion';
-import { HelloWorld } from './HelloWorld';
-
-export const RemotionRoot = () => {
-  return (
-    <>
-      <Composition
-        id="HelloWorld"
-        component={HelloWorld}
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
-        defaultProps={{
-          titleText: 'Hello, World!',
-          titleColor: 'black',
-        }}
-      />
-    </>
-  );
-};
-
-// renderer/compositions/templates/HelloWorld/index.tsx
+import { Composition } from 'remotion';
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, spring, staticFile } from 'remotion';
-
+import { AbsoluteFill, useCurrentFrame, spring } from 'remotion';
+import { registerRoot } from 'remotion';
 const title: React.CSSProperties = {
 	fontFamily: 'sans-serif',
 	fontWeight: 'bold',
@@ -82,3 +60,23 @@ export const HelloWorld: React.FC<{
 		</AbsoluteFill>
 	);
 }; 
+
+export const RemotionRoot = () => {
+  return (
+    <>
+      <Composition
+        id="HelloWorld"
+        component={HelloWorld}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{
+          titleText: 'Hello, World!',
+          titleColor: 'black',
+        }}
+      />
+    </>
+  );
+};
+registerRoot(RemotionRoot);
