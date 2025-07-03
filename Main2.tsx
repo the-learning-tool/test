@@ -10,7 +10,7 @@ import {
   Easing,
   Series,
 } from 'remotion';
-import { registerRoot } from 'remotion/register-root';
+import { registerRoot } from 'remotion';
 
 // --- STYLING & CONFIGURATION ---
 const SCENE_DURATION_IN_FRAMES = 6 * 30; // 6 seconds per scene
