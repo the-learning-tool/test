@@ -10,6 +10,7 @@ import {
   Img,
   staticFile,
   random,
+  registerRoot,
 } from 'remotion';
 import {
   TransitionSeries,
@@ -1019,8 +1020,7 @@ export const WaterCycleAnimation: React.FC = () => {
   );
 };
 
-// Export the composition
-export default function Main2() {
+export function Main2() {
   return (
     <Composition
       id="WaterCycle"
@@ -1032,3 +1032,6 @@ export default function Main2() {
     />
   );
 }
+
+
+registerRoot(Main2);
